@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.post-buttons {
+  @apply flex rounded-full items-center px-10 md:px-16 py-1 font-medium hover:bg-gray-100;
+}
+
+.comment-buttons {
+  @apply px-2 font-bold hover:bg-gray-200 rounded;
+}
+
+.edit-button {
+  @apply px-6 py-1 font-semibold rounded hover:bg-gray-200;
+}
+
+.follow-button {
+  @apply px-6 py-1 bg-blue-500 text-white ring-inset rounded-full hover:bg-blue-700;
+}
+
+.logout-button {
+  @apply px-4 md:px-6 py-1 bg-blue-500 ring text-white rounded-full hover:bg-blue-700;
+}
