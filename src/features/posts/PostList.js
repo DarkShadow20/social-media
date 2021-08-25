@@ -1,3 +1,5 @@
+/** @format */
+
 import React from "react";
 import { AddPostInput } from "./AddPostInput";
 import { useDispatch, useSelector } from "react-redux";
@@ -43,11 +45,11 @@ export const PostList = () => {
       )
     );
 
-    return (
-      <div className="flex items-center flex-col mt-3 mb-5">
-        <AddPostInput />
-        {status === "pending" && <p className="text-2xl">Loading...</p>}
-        {status === "success" && renderContent}
-      </div>
-    );
-  };
+  return (
+    <div className="flex items-center flex-col mt-3 mb-5">
+      <AddPostInput />
+      {status === "pending" && <p className="text-2xl">Loading...</p>}
+      {status === "success" && renderContent}
+    </div>
+  );
+};

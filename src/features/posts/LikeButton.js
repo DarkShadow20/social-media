@@ -1,6 +1,5 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-// import { reactionAdded } from "./postSlice";
 import { FiThumbsUp } from "react-icons/fi";
 import {
   likePost,
@@ -11,29 +10,27 @@ import {
 
 export const LikeButton = ({ post, type }) => {
   const dispatch = useDispatch();
-    console.log(post)
   const { currentUser } = useSelector((state) => state.auth);
-
   const likeColorToggle = (post) => {
     if (post?.likes.includes(currentUser.userid)) {
-      return "text-primary";
+      return "text-blue-500";
     } else {
       return "";
     }
   };
 
-  const likeButtonHandler = (post) => {
-    if (post?.likes.includes(currentUser.userid)) {
+  const likeButtonHandler = (post,currentUser) => {
+    if (post.likes.includes(currentUser?.userid)) {
       if (type === "single") {
-        dispatch(unLikeSinglePost(post.id));
+        dispatch(unLikeSinglePost(post?.id));
       } else {
-        dispatch(unlikePost(post.id));
+        dispatch(unlikePost(post?.id));
       }
     } else {
       if (type === "single") {
-        dispatch(likeSinglePost(post.id));
+        dispatch(likeSinglePost(post?.id));
       } else {
-        dispatch(likePost(post.id));
+        dispatch(likePost(post?.id));
       }
     }
   };

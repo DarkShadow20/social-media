@@ -27,7 +27,6 @@ export const SinglePostPage = () => {
   const post = useSelector((state) => state.post.singlePost);
 
   const handleOnclickHandler = (post) => {
-    console.log(post)
     dispatch(postComment({ postid: post.id, comment }));
     setShowBox(false);
     setComment("");
