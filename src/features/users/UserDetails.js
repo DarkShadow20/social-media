@@ -21,7 +21,7 @@ export const UserDetails = ({ user }) => {
             <BiLinkAlt />
             <a
               href={`https://${user.url}`}
-              className="pl-1"
+              className="pl-1 text-blue-500"
               target="_blank"
               rel="noreferrer">
               {user.url}

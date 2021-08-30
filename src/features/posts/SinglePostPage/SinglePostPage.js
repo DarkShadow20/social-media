@@ -110,7 +110,7 @@ export const SinglePostPage = () => {
                     className="comment-buttons"
                     onClick={() => handleOnclickHandler(post)}
                     disabled={!canPost}>
-                    Save
+                    Comment
                   </button>
                 </div>
               </div>

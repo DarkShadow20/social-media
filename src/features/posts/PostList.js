@@ -1,5 +1,3 @@
-/** @format */
-
 import React from "react";
 import { AddPostInput } from "./AddPostInput";
 import { useDispatch, useSelector } from "react-redux";
