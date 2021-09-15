@@ -5,7 +5,7 @@ export const searchUserClicked=createAsyncThunk(
     "/users/Search",
     async(value,{fulfillWithValue,rejectWithValue})=>{
         try{
-            const respsone=await axios.get(`https://SocialMedia.kunalgupta9.repl.co/user?username=${value}`)
+            const respsone=await axios.get(`https://1d2474cb-6db8-431d-b0ec-e2933cdd71c0.id.repl.co/user?username=${value}`)
             return fulfillWithValue(respsone.data)
         }catch(error){
             return rejectWithValue(error.respsone)
@@ -17,7 +17,7 @@ export const fetchUser=createAsyncThunk(
     "users/fetchUser",
     async(username,{fulfillWithValue,rejectWithValue})=>{
         try{
-            const response=await axios.get(`https://SocialMedia.kunalgupta9.repl.co/user/${username}`)
+            const response=await axios.get(`https://1d2474cb-6db8-431d-b0ec-e2933cdd71c0.id.repl.co/user/${username}`)
             return fulfillWithValue(response.data);
         }catch(error){
             return rejectWithValue(error.respsone);
@@ -34,7 +34,7 @@ export const updateProfile=createAsyncThunk(
             formData.append('image',image);
             formData.append('name',fileName);
             try{
-                const {data,status}=await axios.post('https://SocialMedia.kunalgupta9.repl.co/images/upload',formData);
+                const {data,status}=await axios.post('https://1d2474cb-6db8-431d-b0ec-e2933cdd71c0.id.repl.co/images/upload',formData);
                 if(status===201){
                     values.profilePicture=data.url
                 }
@@ -43,7 +43,7 @@ export const updateProfile=createAsyncThunk(
             }
         }
         try{
-            const respone=await axios.post('https://SocialMedia.kunalgupta9.repl.co/user/update',values)
+            const respone=await axios.post('https://1d2474cb-6db8-431d-b0ec-e2933cdd71c0.id.repl.co/user/update',values)
             return fulfillWithValue(respone.data);
         }catch(error){
             rejectWithValue(error.respsone);
@@ -55,7 +55,7 @@ export const followButtonPressed=createAsyncThunk(
     "user/follow",
     async(userid,{fulfillWithValue,rejectWithValue})=>{
         try{
-            const response=await axios.post('https://SocialMedia.kunalgupta9.repl.co/user/follow',{targetid:userid});
+            const response=await axios.post('https://1d2474cb-6db8-431d-b0ec-e2933cdd71c0.id.repl.co/user/follow',{targetid:userid});
             console.log(response.data);
             return fulfillWithValue(response.data);
         }catch(error){
@@ -68,7 +68,7 @@ export const unFollowButtonPressed=createAsyncThunk(
     "user/unfollow",
     async(userid,{fulfillWithValue,rejectWithValue})=>{
         try{
-            const response=await axios.post('https://SocialMedia.kunalgupta9.repl.co/user/unfollow',{targetid:userid})
+            const response=await axios.post('https://1d2474cb-6db8-431d-b0ec-e2933cdd71c0.id.repl.co/user/unfollow',{targetid:userid})
             return fulfillWithValue(response.data)
         }catch(error){
             return rejectWithValue(error.response)
@@ -78,13 +78,13 @@ export const unFollowButtonPressed=createAsyncThunk(
 
 export const getFollowers=createAsyncThunk("user/follower",
 async(username)=>{
-    const response=await axios.get(`https://SocialMedia.kunalgupta9.repl.co/user/${username}/followers`);
+    const response=await axios.get(`https://1d2474cb-6db8-431d-b0ec-e2933cdd71c0.id.repl.co/user/${username}/followers`);
     return response.data
 })
 
 export const getFollowing=createAsyncThunk("user/following",
 async (username)=>{
-    const response=await axios.get(`https://SocialMedia.kunalgupta9.repl.co/user/${username}/following`);
+    const response=await axios.get(`https://1d2474cb-6db8-431d-b0ec-e2933cdd71c0.id.repl.co/user/${username}/following`);
     return response.data
 })
 

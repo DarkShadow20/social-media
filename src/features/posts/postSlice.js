@@ -5,7 +5,7 @@ export const fetchAllPosts = createAsyncThunk(
   "posts/fetchallPosts",
   async () => {
     const { data } = await axios.get(
-      `https://SocialMedia.kunalgupta9.repl.co/post/feed`
+      `https://1d2474cb-6db8-431d-b0ec-e2933cdd71c0.id.repl.co/post/feed`
     );
 
     return data;
@@ -17,7 +17,7 @@ export const likePost = createAsyncThunk(
   async (postid, { fulfillWithValue, rejectWithValue }) => {
     try {
       const { status, data } = await axios.post(
-        `https://SocialMedia.kunalgupta9.repl.co/post/${postid}/like`
+        `https://1d2474cb-6db8-431d-b0ec-e2933cdd71c0.id.repl.co/post/${postid}/like`
       );
       if (status === 201) {
         return fulfillWithValue(data);
@@ -33,7 +33,7 @@ export const unlikePost = createAsyncThunk(
   async (postid, { fulfillWithValue, rejectWithValue }) => {
     try {
       const { status, data } = await axios.post(
-        `https://SocialMedia.kunalgupta9.repl.co/post/${postid}/unlike`
+        `https://1d2474cb-6db8-431d-b0ec-e2933cdd71c0.id.repl.co/post/${postid}/unlike`
       );
       if (status === 200) {
         return fulfillWithValue(data);
@@ -49,7 +49,7 @@ export const fetchSinglePost = createAsyncThunk(
   async (postid, { fulfillWithValue, rejectWithValue }) => {
     try {
       const { status, data } = await axios.get(
-        `https://SocialMedia.kunalgupta9.repl.co/post/${postid}`
+        `https://1d2474cb-6db8-431d-b0ec-e2933cdd71c0.id.repl.co/post/${postid}`
       );
       if (status === 200) {
         return fulfillWithValue(data);
@@ -65,7 +65,7 @@ export const likeSinglePost = createAsyncThunk(
   async (postid, { fulfillWithValue, rejectWithValue }) => {
     try {
       const { status, data } = await axios.post(
-        `https://SocialMedia.kunalgupta9.repl.co/post/${postid}/likeone`
+        `https://1d2474cb-6db8-431d-b0ec-e2933cdd71c0.id.repl.co/post/${postid}/likeone`
       );
       if (status === 201) {
         return fulfillWithValue(data);
@@ -81,7 +81,7 @@ export const unLikeSinglePost = createAsyncThunk(
   async (postid, { fulfillWithValue, rejectWithValue }) => {
     try {
       const { status, data } = await axios.post(
-        `https://SocialMedia.kunalgupta9.repl.co/post/${postid}/unlikeone`
+        `https://1d2474cb-6db8-431d-b0ec-e2933cdd71c0.id.repl.co/post/${postid}/unlikeone`
       );
       if (status === 200) {
         return fulfillWithValue(data);
@@ -97,7 +97,7 @@ export const postComment = createAsyncThunk(
   async ({ postid, comment }, { fulfillWithValue, rejectWithValue }) => {
     try {
       const { status, data } = await axios.post(
-        `https://SocialMedia.kunalgupta9.repl.co/post/${postid}/comment`,
+        `https://1d2474cb-6db8-431d-b0ec-e2933cdd71c0.id.repl.co/post/${postid}/comment`,
         { comment }
       );
       if (status === 201) {
@@ -122,7 +122,7 @@ export const createPost = createAsyncThunk(
       formData.append("name", fileName);
       try {
         const { data, status } = await axios.post(
-          `https://SocialMedia.kunalgupta9.repl.co/images/upload`,
+          `https://1d2474cb-6db8-431d-b0ec-e2933cdd71c0.id.repl.co/images/upload`,
           formData
         );
         if (status === 201) {
@@ -134,7 +134,7 @@ export const createPost = createAsyncThunk(
     }
     try {
       const { data } = await axios.post(
-        `https://SocialMedia.kunalgupta9.repl.co/post`,
+        `https://1d2474cb-6db8-431d-b0ec-e2933cdd71c0.id.repl.co/post`,
         postData
       );
       return fulfillWithValue(data);
@@ -148,7 +148,7 @@ export const getAllUserPost = createAsyncThunk(
   "post/getAllUserPost",
   async (userid) => {
     const response = await axios.get(
-      `https://SocialMedia.kunalgupta9.repl.co/post/${userid}/allposts`
+      `https://1d2474cb-6db8-431d-b0ec-e2933cdd71c0.id.repl.co/post/${userid}/allposts`
     );
 
     return response.data;
@@ -159,7 +159,7 @@ export const getAllLikedPost = createAsyncThunk(
   "post/getAllLikedPost",
   async (userid) => {
     const response = await axios.get(
-      `https://SocialMedia.kunalgupta9.repl.co/post/${userid}/likedposts`
+      `https://1d2474cb-6db8-431d-b0ec-e2933cdd71c0.id.repl.co/post/${userid}/likedposts`
     );
 
     return response.data;

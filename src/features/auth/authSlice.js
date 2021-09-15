@@ -9,7 +9,7 @@ export const userSignUp = createAsyncThunk(
   async (values, { fulfillWithValue, rejectWithValue }) => {
     try {
       const response = await axios.post(
-        "https://SocialMedia.kunalgupta9.repl.co/auth/signup",
+        "https://1d2474cb-6db8-431d-b0ec-e2933cdd71c0.id.repl.co/auth/signup",
         values
       );
       console.log(values)
@@ -29,7 +29,7 @@ export const login = createAsyncThunk(
   async (values, { fulfillWithValue, rejectWithValue }) => {
     try {
       const response = await axios.post(
-        "https://SocialMedia.kunalgupta9.repl.co/auth/login",
+        "https://1d2474cb-6db8-431d-b0ec-e2933cdd71c0.id.repl.co/auth/login",
         values
       );
 
