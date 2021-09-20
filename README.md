@@ -17,7 +17,7 @@ BadZine is a social media app where you can post status updates and stay connect
 - Private Routes
 - Images stored to cloudinary
 
-## Built With
+## Tech Stack
 - ReactJS
 - Redux-toolkit
 - React Router V6
